@@ -7,15 +7,15 @@ Follow these steps to set up the project locally.
    ```
 2.Navigate into the project directory:
  ```bash
-cd <project-directory>
+  cd <project-directory>
 ```
 3.Install the dependencies:
  ```bash
-npm install
+  npm install
 ```
 4.Running the Server
 After the installation is complete, you can start the server by running:
  ```bash
-npm start
+  npm start
 ```
 

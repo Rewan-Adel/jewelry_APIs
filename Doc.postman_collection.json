@@ -73,7 +73,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/product/:id",
+					"raw": "http://localhost:5000/api/product/get/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -82,6 +82,7 @@
 					"path": [
 						"api",
 						"product",
+						"get",
 						":id"
 					],
 					"variable": [

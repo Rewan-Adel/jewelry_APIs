@@ -7,6 +7,7 @@ exports.getAll = async(req, res) => {
         res.status(200).json({
             status: 'success',
             code: 200,
+            totalProducts: products.length,
             data: products
         });
     } catch (err) {
@@ -21,7 +22,7 @@ exports.getAll = async(req, res) => {
 
 exports.getOne = async(req, res) => {
     try {
-        if (!req.params.id) {
+        if (!req.params.id || req.params.id  == ':id') {
             return res.status(400).json({
                 status: 'fail',
                 code: 400,
@@ -29,19 +30,20 @@ exports.getOne = async(req, res) => {
             });
         }
 
-        let product = null;
-        if (mongoose.Types.ObjectId.isValid(req.params.id)){
+        let product = {};
+        if (mongoose.Types.ObjectId.isValid(req.params.id))
             product = await Product.findById(req.params.id);
-            if (!product) {
-                return res.status(404).json({
-                    status: 'fail',
-                    code: 404,
-                    message: 'Product not found'
-                });
-            }
-        }
+        
 
-       else product = await Product.findOne({id:req.params.id});
+        else product = await Product.findOne({id:req.params.id});
+
+        if (!product) {
+            return res.status(404).json({
+                status: 'fail',
+                code: 404,
+                message: 'Product not found'
+            });
+        }
         res.status(200).json({
             status: 'success',
             code: 200,

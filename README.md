@@ -5,7 +5,7 @@ Follow these steps to set up the project locally.
    ```bash
    git clone [<repository-url>](https://github.com/Rewan-Adel/jewelry_APIs.git)
    ```
-Navigate into the project directory:
+2.Navigate into the project directory:
  ```bash
 cd <project-directory>
 ```
@@ -13,7 +13,7 @@ cd <project-directory>
  ```bash
 npm install
 ```
-Running the Server
+4.Running the Server
 After the installation is complete, you can start the server by running:
  ```bash
 npm start
